@@ -1,0 +1,48 @@
+.app-listing-tabs {
+  margin:0 auto;
+  color:white;
+  /* padding:5px 0; */
+  font-family:Arial, Helvetica, sans-serif;
+  margin-top: 3px;
+  width:99%;
+  height:50px;
+}
+.app-listing-tabs ul {
+  display: flex;
+  padding-left:0; /* NOTE: Compulsary Because It removes Space before li*/
+  margin:0;
+  /* align-items: center; */
+}
+.app-listing-tabs ul li {
+  background-color: rgb(88, 14, 42);
+  margin:0 2px;
+  width: 49%;
+  padding:13px 0 0 2%;
+  height:32px;
+  font-weight: 600;
+  cursor: pointer;
+}
+app-listing-tabs ul li:nth-child(2) {
+  float:right;
+}
+.app-listing-tabs ul li:hover {
+  border-bottom: 3px red solid;
+  transition: all 0.3s ease;
+}
+
+/*.app-listing-tabs ul li a {
+  color: white;
+   background-color: rgb(70, 9, 9);
+  padding: 11px 10px 13px;
+}*/
+
+.app-listing-tabs ul .selected {
+  border-bottom: 3px red solid;
+  transition: all 0.5s ease;
+}
+@media (max-width:480px) {
+  .app-listing-tabs ul li {
+    font-weight: 600;
+    font-size: 12px;
+  }
+}

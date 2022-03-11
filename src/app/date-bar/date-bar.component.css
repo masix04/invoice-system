@@ -1,0 +1,43 @@
+.date-bar {
+  margin:0 auto;
+  color:white;
+  background-color: rgb(63, 63, 107);
+  /* padding:5px 0; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 3px;
+  width:70%;
+  height:50px;
+}
+
+.date-bar ul{
+  display: flex;
+  padding-left:5px;
+  margin:0;
+}
+.date-bar ul li {
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  width:50%;
+  padding-top:10px;
+  background-color: rgb(45, 52, 71);
+  margin-right:3px;
+  height:40px;
+}
+
+@media (max-width:767px) {
+  .date-bar ul li {
+    padding-top:7px;
+    font-weight: 600;
+    font-size: 12px;
+
+  }
+}
+
+@media (max-width:480px) {
+  .date-bar ul li {
+    font-weight: 600;
+    font-size: 10px;
+  }
+}
+

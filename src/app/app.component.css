@@ -1,0 +1,23 @@
+.app_container {
+  width: 60%;
+  margin:0 auto;
+  padding:0;
+}
+.app-header {
+  height:150px;
+  background-color: white;
+  border-bottom: rgb(180, 56, 56) 2px solid;
+}
+.app_title {
+  border-top-right-radius:5px;
+  text-align: left;
+  color: whitesmoke;
+  background-color: black;
+  padding: 10px;
+  height:50px;
+  margin-bottom: 0px;
+}
+
+/* .date-class {
+  background-color: red;
+} */
