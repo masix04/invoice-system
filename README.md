@@ -1,3 +1,6 @@
+
+# invoice-system
+To calculate profit and Loss after some time
 # ProfitLossInvoice
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.10.
