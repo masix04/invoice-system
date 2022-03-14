@@ -11,10 +11,16 @@ const routes: Routes = [
   },
   { path: 'invoices', component: CreateInvoiceComponent },
 
-  { path: 'invoices/create-invoice', component: CreateInvoiceComponent },
-  { path: 'invoices/view-invoice', component: ViewInvoiceComponent },
+  // { path: 'invoices/create-invoice', 
+  //   loadChildren: './create-invoice/create-invoice.module#CreateInvoiceModule'},
+  
+  // { path: 'invoices/view-invoice', 
+  //   loadChildren: './view-invoice/view-invoice.module#ViewInvoiceModule'},
 
-  { path: '**', redirectTo: 'invoices', pathMatch: 'full' },
+  { path: 'create-invoice', component: CreateInvoiceComponent },
+  { path: 'view-invoice', component: ViewInvoiceComponent },
+
+  // { path: '**', redirectTo: 'invoices', pathMatch: 'full' },
 ]
 @NgModule({
   declarations: [],

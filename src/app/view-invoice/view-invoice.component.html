@@ -1,3 +1,19 @@
 <p>
   view-invoice works!
 </p>
+<div>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Payment Type</th>
+      <th>Payment Date</th>
+    </tr>
+    <tr *ngFor="let mydata of invoice[0]">
+      <td>{{mydata.name}}</td>
+      <td>{{mydata.price}}</td>
+      <td>{{mydata.type}}</td>
+      <td>{{mydata.datetime}}</td>
+    </tr>
+  </table>
+</div>
