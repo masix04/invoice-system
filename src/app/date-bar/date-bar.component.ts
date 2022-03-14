@@ -10,6 +10,9 @@ export class DateBarComponent implements OnInit {
   date = new Date();
 
   constructor(public datePipe: DatePipe) {
+    setInterval(() => {
+      this.date = Date.now();
+    }, 30000);
     console.log(this.date);
    }
 

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { URLS } from '../utils/URLS';
 
 @Component({
   selector: 'app-create-invoice',
@@ -10,13 +13,41 @@ export class CreateInvoiceComponent implements OnInit {
   ProductName: any;
   PaymentType: any;
   ProdctPrice: any;
+  
   paymentTypes = [];
   productModel = new Product('this.ProductName', 'this.PaymentType', 'this.ProdctPrice');
-  constructor() {
+  constructor(public formBuilder: FormBuilder, private http: HttpClient,
+              public urls: URLS) {
     this.paymentTypes = ['Sale', 'Purchase'];
   }
-  TransactionStore() {
+  // invoiceForm = this.formBuilder.group({
+  //   name: '',
+  //   type: '',
+  //   price: '',
+  // });
+  /** NOTE: 
+   *  BElow Code Uses to create Reactive Forms Where in HTML No use of [(NgModel)]
+   * 
+   *   Instead we use formControlName = ""
+   *   In app.module.ts -> we USE ReactiveFormControl
+   *   
+   */
+  invoiceForm = new FormGroup({
+    ProductName: new FormControl(),
+    PaymentType: new FormControl(),
+    ProductPrice: new FormControl()
+  })
+  onTransactionStore() {
     console.log('Submit Process Started.');
+    console.log(this.invoiceForm.value);
+    this.FeedToDatabase(this.invoiceForm.value);
+  }
+  FeedToDatabase(DataArray: any) {
+    this.http.get(this.urls.BaseUrl+'insertAction.php?Name='+DataArray.ProductName+'&Price='+DataArray.ProductPrice+'&Type='+DataArray.PaymentType, DataArray)
+    .subscribe({
+      next: (response) => console.log(response),
+      // error: (error) => console.log(error),
+    });
   }
   ngOnInit() {
   }
