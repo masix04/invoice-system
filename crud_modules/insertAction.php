@@ -10,6 +10,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 require_once "../config/connection.php";
 include "../config/db.class.php";
 
+date_default_timezone_set('Asia/Karachi');// Otherwise it shows -5 hoursn from PAKISTAN
 
 
 $request_Method = $_SERVER['REQUEST_METHOD'];
@@ -18,22 +19,39 @@ if($request_Method == 'POST') {
     $price = $_POST['Price'];
     $name = $_POST['Name'];
 } else if($request_Method =='GET') {
-    // $type = $_GET['PaymentType'];
-    // $price = $_GET['ProductPrice'];
-    // $name = $_GET['ProductName'];
     $type = $_GET['Type'];
     $price = $_GET['Price'];
     $name = $_GET['Name'];
 }
 // echo $request_Method;
 
-// $type = $_GET['PaymentType'];
-echo($type)."\n";
-echo($price)."\n";
-echo($name)."\n";
-// die;
-    // print_r($DataArray);
+$date = date('Y-m-d h:i:s');
+
 $db = new DB;
-$query = "INSERT into Product() VALUES()";
-$result = $db->rawSQLQuery($query);
-// echo "Insert Message: ".$result;
+$getDBTableDataCount_query = "SELECT COUNT(*) count from product";
+$dataCount = $db->rawSQLQuery($getDBTableDataCount_query);
+$dbDataCount = 0;
+/**NOTE: 
+ *  Geeting Data from the form tof Object to Needed items. Using MYSQL Function.
+ */
+while($row = mysqli_fetch_assoc($dataCount)) {
+    $dbDataCount = $row['count'];
+}
+
+$AddToProducts_query = "INSERT into Product(`id`,`name`) VALUES(".($dbDataCount+1).", '$name')";
+// echo "\n".$AddToProducts_query;
+if( $db->rawSQLQuery($AddToProducts_query) === TRUE) {
+    echo "Product Data has been saved Successfully\n<br>";
+} else{
+    echo "ERROR => ". $AddToProducts_query."<br>".$conn->error;
+}
+$AddToTransactionDetails_query = "INSERT into transaction_detail(`product_id`,`price`,`type`,`datetime`) VALUES(".($dbDataCount+1).", $price, '$type', '$date')";
+echo $AddToTransactionDetails_query;
+// echo "\n".$AddToTransactionDetails_query;
+
+if( $db->rawSQLQuery($AddToTransactionDetails_query) === TRUE) {
+    echo "Transaction Detail's Data has been saved Successfully\n";
+} else{
+    echo "ERROR => ". $AddToTransactionDetails_query."<br>".$conn->error;
+}
+return;
