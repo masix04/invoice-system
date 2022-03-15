@@ -1,19 +1,24 @@
-<p>
-  view-invoice works!
-</p>
-<div>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Payment Type</th>
-      <th>Payment Date</th>
-    </tr>
-    <tr *ngFor="let mydata of invoice[0]">
-      <td>{{mydata.name}}</td>
-      <td>{{mydata.price}}</td>
-      <td>{{mydata.type}}</td>
-      <td>{{mydata.datetime}}</td>
-    </tr>
-  </table>
+<div class="app-view-invoice-container">
+  <div class="view-invoice-head">
+    <h3> View INVOICE </h3>
+  </div>
+
+  <div class="view-data-table">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price / Item</th>
+        <th>Payment Type</th>
+        <th>Payment Date</th>
+      </tr>
+      <tr *ngFor="let mydata of invoice[0]">
+        <td>{{mydata.name}}</td>
+        <td>{{mydata.quantity}}</td>
+        <td>{{mydata.price_per_item}}</td>
+        <td>{{mydata.type}}</td>
+        <td>{{mydata.datetime}}</td>
+      </tr>
+    </table>
+  </div>
 </div>

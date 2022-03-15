@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./date-bar.component.css']
 })
 export class DateBarComponent implements OnInit {
-  date = new Date();
+  date: any;
 
   constructor(public datePipe: DatePipe) {
+    this.date = new Date();
     setInterval(() => {
       this.date = Date.now();
     }, 30000);
