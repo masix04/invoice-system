@@ -27,10 +27,10 @@
 } */
 .app-listing-tabs ul li:hover {
   /* border-bottom: 3px red solid; */
-  box-shadow: black 3px 2px;
+  box-shadow: black 3px 2px 3px;
   border-bottom: white dashed 2px;
   transition: all 0.5s ease;
-  
+
 }
 .app-listing-tabs ul li:nth-child(1):hover {
   transform: translate(-1px, 1px);

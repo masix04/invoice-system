@@ -27,7 +27,15 @@
 .app-create-invoice-container .create-invoice-body .create-invoice-form .form-group{
   margin: 5px 0;
   display: grid;
-
+}
+.app-create-invoice-container .create-invoice-body .create-invoice-form .form-group label {
+  font-weight: 600;
+  font-family: monospace;
+  font-size: 18px;
+  margin:0 0 5px;
+}
+.app-create-invoice-container .create-invoice-body .create-invoice-form .form-group input,select {
+  font-size: large;
 }
 .app-create-invoice-container .create-invoice-body .create-invoice-form .form-group .create-form-name {
   width:50%;
@@ -40,6 +48,20 @@
 .app-create-invoice-container .create-invoice-body .create-invoice-form .form-group .create-form-type {
   width:51%;
   height: 30px;
+}
+.app-create-invoice-container .create-invoice-body .create-invoice-form .form-group .create-form-quantity {
+  width:20%;
+  height:30px;
+}
+.app-create-invoice-container .create-invoice-body .create-invoice-form .form-button .create-form-submit-button {
+  padding:10px;
+  color:whitesmoke;
+  margin: 10px 0 2px 5px;
+  background-color: rgb(16, 4, 68);
+  border: none;
+  font-size:16px;
+  border-radius: 5px;
+  box-shadow: rgb(4, 133, 165) 2px 2px 3px;
 }
 @media (max-width:991px) {
   .app-create-invoice-container .create-invoice-head h3 {

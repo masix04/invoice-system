@@ -1,0 +1,19 @@
+.app-view-invoice-container .view-invoice-head h3 {
+  width:99%;
+  background-color: rgb(245, 249, 250);
+  color: rgb(103, 104, 100);
+  height:45px;
+  margin:0;
+  padding:10px 0 0 10px;
+  border-top: rgb(180, 56, 56) solid 1px;
+}
+@media (max-width:991px) {
+  .app-view-invoice-container .view-invoice-head h3 {
+    width:98%;
+  }
+}
+@media (max-width: 480px) {
+  .app-view-invoice-container .view-invoice-head h3 {
+    width:97%;
+  }
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { URLS } from '../utils/URLS';
 // import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-view-invoice',
@@ -8,15 +9,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ViewInvoiceComponent implements OnInit {
 
-   /**NOTE:: 
-   * Brought Data From Database LIKE 
+   /**NOTE::
+   * Brought Data From Database LIKE
    */
   invoice = [];
   sales = [];
   purchases = [];
 
-  constructor(private http: HttpClient) {
-    this.http.get('http://localhost/i_voice/crud_modules/ViewInvoiceAction.php').subscribe(response => {
+  constructor(private http: HttpClient, public urls: URLS) {
+
+    this.http.get(this.urls.WorkBaseUrl+'ViewInvoiceAction.php').subscribe(response => {
       this.invoice.push(response);
       console.log(this.invoice);
     },

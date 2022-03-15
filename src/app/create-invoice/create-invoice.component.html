@@ -12,7 +12,13 @@
         </div>
 
         <div class="form-group">
-          <label for="price"> Price </label>
+          <label for="quantity"> Product Quantity </label>
+          <input id="quantity" class="create-form-quantity" type="number" formControlName = "ProductQuantity" name = "ProductQuantity">
+          <!-- <input id="quantity" class="create-form-quantity" type="text" [(ngModel)]= "ProductModel.ProductQuantity" name = "Productquantity"> -->
+        </div>
+
+        <div class="form-group">
+          <label for="price"> Price per Item</label>
           <input id="price" class="create-form-price" type="text" formControlName = "ProductPrice" name = "ProductPrice">
           <!-- <input id="price" class="create-form-price" type="text" [(ngModel)]= "ProductModel.ProductPrice" name = "ProductPrice"> -->
         </div>
@@ -24,10 +30,10 @@
             <option *ngFor="let type of paymentTypes" [value] = "type" selected>{{type}}</option>
           </select>
         </div>
-        
-        <div>
-          <button class="button" type="submit">
-            Save
+
+        <div class="form-button">
+          <button class="create-form-submit-button" type="submit">
+            Save Invoice
           </button>
         </div>
       </form>

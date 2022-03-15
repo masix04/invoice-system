@@ -13,9 +13,9 @@ export class CreateInvoiceComponent implements OnInit {
   ProductName: any;
   PaymentType: any;
   ProdctPrice: any;
-  
+
   paymentTypes = [];
-  productModel = new Product('this.ProductName', 'this.PaymentType', 'this.ProdctPrice');
+  productModel = new Product('this.ProductName','this.ProductQuantity', 'this.PaymentType', 'this.ProdctPrice');
   constructor(public formBuilder: FormBuilder, private http: HttpClient,
               public urls: URLS) {
     this.paymentTypes = ['Sale', 'Purchase'];
@@ -25,17 +25,18 @@ export class CreateInvoiceComponent implements OnInit {
   //   type: '',
   //   price: '',
   // });
-  /** NOTE: 
+  /** NOTE:
    *  BElow Code Uses to create Reactive Forms Where in HTML No use of [(NgModel)]
-   * 
+   *
    *   Instead we use formControlName = ""
-   *   In app.module.ts -> we USE ReactiveFormControl
-   *   
+   *   In app.module.ts -> we USE / IMPORT ReactiveFormControl
+   *
    */
   invoiceForm = new FormGroup({
     ProductName: new FormControl(),
     PaymentType: new FormControl(),
-    ProductPrice: new FormControl()
+    ProductPrice: new FormControl(),
+    ProductQuantity: new FormControl()
   })
   onTransactionStore() {
     console.log('Submit Process Started.');
@@ -43,10 +44,10 @@ export class CreateInvoiceComponent implements OnInit {
     this.FeedToDatabase(this.invoiceForm.value);
   }
   FeedToDatabase(DataArray: any) {
-    this.http.get(this.urls.BaseUrl+'insertAction.php?Name='+DataArray.ProductName+'&Price='+DataArray.ProductPrice+'&Type='+DataArray.PaymentType, DataArray)
+    this.http.get(this.urls.WorkBaseUrl+'insertAction.php?Name='+DataArray.ProductName+'&Quantity='+DataArray.ProductQuantity+'&Price='+DataArray.ProductPrice+'&Type='+DataArray.PaymentType, DataArray)
     .subscribe({
       next: (response) => console.log(response),
-      // error: (error) => console.log(error),
+      error: (error) => console.log(error),
     });
   }
   ngOnInit() {
