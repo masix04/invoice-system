@@ -1,5 +1,6 @@
+
 .app-view-invoice-container .view-invoice-head h3 {
-  width:99%;
+  width:98.6%;
   background-color: rgb(245, 249, 250);
   color: rgb(103, 104, 100);
   height:45px;
@@ -16,4 +17,30 @@
   .app-view-invoice-container .view-invoice-head h3 {
     width:97%;
   }
+}
+.app-view-invoice-container .view-invoice-body {
+  margin-top:5px;
+  background-color: white;
+}
+ .app-view-invoice-container .view-invoice-body header .view-invoice-body-header .left-side {
+  width:40%;
+  float:left;
+}
+.app-view-invoice-container .view-invoice-body header .view-invoice-body-header .right-side {
+  width:55%;
+  float:right;
+}
+.app-view-invoice-container .view-invoice-body header .view-invoice-body-header .right-side h3 {
+  color:rgb(123, 24, 153);
+}
+/* .app-view-invoice-container .view-invoice-body footer .view-invoice-body-footer {
+  background-color: black;
+} */
+/* .app-view-invoice-container .view-invoice-body footer .view-invoice-body-footer .left-side {
+  background-color: aqua;
+} */
+.app-view-invoice-container .view-invoice-body footer .view-invoice-body-footer .right-side {
+  /* width:40%; */
+  /* background-color: black; */
+  text-align: right;
 }

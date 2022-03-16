@@ -47,13 +47,14 @@
 }
 .app-create-invoice-container .create-invoice-body .create-invoice-form .form-group .create-form-type {
   width:51%;
-  height: 30px;
+  height: 35px;
 }
 .app-create-invoice-container .create-invoice-body .create-invoice-form .form-group .create-form-quantity {
   width:20%;
   height:30px;
 }
 .app-create-invoice-container .create-invoice-body .create-invoice-form .form-button .create-form-submit-button {
+  cursor: pointer;
   padding:10px;
   color:whitesmoke;
   margin: 10px 0 2px 5px;

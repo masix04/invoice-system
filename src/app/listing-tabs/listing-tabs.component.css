@@ -1,10 +1,10 @@
 .app-listing-tabs {
   margin:0 auto;
-  color:rgb(248, 204, 237);
+  color:rgb(245, 237, 224);
   /* padding:5px 0; */
   font-family:Arial, Helvetica, sans-serif;
   margin-top: 3px;
-  width:99%;
+  width:99.5%;
   height:50px;
 }
 .app-listing-tabs ul {
@@ -15,20 +15,21 @@
 }
 .app-listing-tabs ul li {
   background-color: rgb(88, 14, 42);
-  margin:0 2px;
-  width: 49%;
+  width: 49.5%;
   padding:13px 0 0 2%;
   height:32px;
   font-weight: 600;
   cursor: pointer;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
-/* app-listing-tabs ul li:nth-child(2) {
-  float:right;
-} */
+.app-listing-tabs ul li:nth-child(1) {
+  margin-right: 2px;
+}
 .app-listing-tabs ul li:hover {
   /* border-bottom: 3px red solid; */
-  box-shadow: black 3px 2px 3px;
-  border-bottom: white dashed 2px;
+  box-shadow: rgb(110, 57, 57) 3px 2px 3px;
+  border-bottom: rgb(240, 127, 127) solid 2px;
   transition: all 0.5s ease;
 
 }

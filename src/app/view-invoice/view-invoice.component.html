@@ -3,22 +3,48 @@
     <h3> View INVOICE </h3>
   </div>
 
-  <div class="view-data-table">
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Price / Item</th>
-        <th>Payment Type</th>
-        <th>Payment Date</th>
-      </tr>
-      <tr *ngFor="let mydata of invoice[0]">
-        <td>{{mydata.name}}</td>
-        <td>{{mydata.quantity}}</td>
-        <td>{{mydata.price_per_item}}</td>
-        <td>{{mydata.type}}</td>
-        <td>{{mydata.datetime}}</td>
-      </tr>
-    </table>
+  <div class="view-invoice-body">
+    <header>
+      <div class="view-invoice-body-header">
+        <div class="left-side">
+          <img src="{{urls.WorkImgBaseUrl}}view_left_head.png" alt="head_image" width="160">
+        </div>
+        <div class="right-side">
+          <h3>Owner's Name</h3>
+          <p>Owner's Industrial Address</p>
+        </div>
+      </div>
+    </header>
+    <div class="view-data-table">
+      <table class="table-responsive">
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price / Item</th>
+          <th>Payment Type</th>
+          <th>Total Price</th>
+          <th>Payment Date</th>
+        </tr>
+        <tr *ngFor="let mydata of invoice[0]">
+          <td>{{mydata.name}}</td>
+          <td>{{mydata.quantity}}</td>
+          <td>{{mydata.price_per_item}}</td>
+          <td>{{mydata.type}}</td>
+          <td>{{mydata.total_price}}</td>
+          <td>{{mydata.datetime}}</td>
+        </tr>
+      </table>
+    </div>
+    <footer>
+      <div class="view-invoice-body-footer">
+        <div class="left-side">
+
+        </div>
+        <div class="right-side">
+          <img src="{{urls.WorkImgBaseUrl}}view_right_foot.png" alt="foot_image" width="160">
+        </div>
+      </div>
+    </footer>
   </div>
+
 </div>
