@@ -18,10 +18,12 @@ if($request_Method == 'POST') {
     $type = $_POST['Type'];
     $price = $_POST['Price'];
     $name = $_POST['Name'];
+    $quantity = $_POST['Quantity'];
 } else if($request_Method =='GET') {
     $type = $_GET['Type'];
     $price = $_GET['Price'];
     $name = $_GET['Name'];
+    $quantity = $_GET['Quantity'];
 }
 // echo $request_Method;
 
@@ -45,8 +47,11 @@ if( $db->rawSQLQuery($AddToProducts_query) === TRUE) {
 } else{
     echo "ERROR => ". $AddToProducts_query."<br>".$conn->error;
 }
-$AddToTransactionDetails_query = "INSERT into transaction_detail(`product_id`,`price`,`type`,`datetime`) VALUES(".($dbDataCount+1).", $price, '$type', '$date')";
-echo $AddToTransactionDetails_query;
+$AddToTransactionDetails_query = "INSERT into transaction_detail(`product_id`,`quantity`,`price_per_item`,`type`,`datetime`) 
+                                  VALUES(".($dbDataCount+1).", $quantity, $price, '$type', '$date') 
+                                        ON DUPLICATE KEY UPDATE `quantity` = VALUES(`quantity`), 
+                                        `price_per_item` = VALUES(`price_per_item`),  `type` = VALUES(`type`),  `datetime` = VALUES(`datetime`)";
+// echo $AddToTransactionDetails_query;
 // echo "\n".$AddToTransactionDetails_query;
 
 if( $db->rawSQLQuery($AddToTransactionDetails_query) === TRUE) {
