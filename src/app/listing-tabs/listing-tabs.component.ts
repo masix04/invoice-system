@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listing-tabs',
@@ -8,9 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListingTabsComponent implements OnInit {
   currentTab: any;
-  constructor(private activatedRoute: Router) {
-    this.currentTab = 'create';
-    // console.log(this.activatedRoute.url);
+  constructor(private activatedRoute: ActivatedRoute) {
+    // this.currentTab = 'create';
+    // console.log(this.activatedRoute.snapshot.url);
 
    }
    ngOnChanges() {

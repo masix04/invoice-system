@@ -1,9 +1,11 @@
 <div class="app-listing-tabs">
   <ul>
-    <li [ngClass]="currentTab == 'create'? 'selected': ''" (click)="currentTab = 'create' " [routerLink]="['create-invoice']">
+    <li [routerLinkActive]="['selected']" (click)="currentTab = 'create' " [routerLink]="['/create-invoice']">
+      <!-- <li [ngClass]="currentTab == 'create'? 'selected': ''" (click)="currentTab = 'create' " [routerLink]="['create-invoice']"> -->
       Add Product
     </li>
-    <li [ngClass]="currentTab == 'view'? 'selected': '' " (click)="currentTab = 'view' " [routerLink]="['view-invoice']">
+    <li [routerLinkActive]="['selected']" (click)="currentTab = 'view' " [routerLink]="['/view-invoice']">
+      <!-- <li [ngClass]="currentTab == 'view'? 'selected': '' " (click)="currentTab = 'view' " [routerLink]="['view-invoice']"> -->
       View Invoice
     </li>
   </ul>
