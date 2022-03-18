@@ -46,7 +46,7 @@
       border: 0;
   }
 }
-.table-responsive {
+/* .table-responsive {
   display: block;
   width: 100%;
   overflow-x: auto;
@@ -55,7 +55,7 @@
 }
 .table-responsive > .table-bordered {
   border: 0;
-}
+} */
 
 /* FORM Classes S-T-A-R-T */
 

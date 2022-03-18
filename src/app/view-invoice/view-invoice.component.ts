@@ -19,24 +19,24 @@ export class ViewInvoiceComponent implements OnInit {
   constructor(private http: HttpClient, public urls: URLS) {
 
     this.http.get(this.urls.WorkBaseUrl+'ViewInvoiceAction.php').subscribe(response => {
-      this.invoice.push(response);
+      this.invoice.push(response['invoice']);
       console.log(this.invoice);
     },
     error => console.error(error));
   }
-  calclateProfitLoss() {
-    let salePrice:any, purchasePrice: any;
-    this.invoice.forEach((product, index) => {
-      if(product.type == "sale" || product.type == 'Sale') {
-        this.sales.push(product.price);
-        salePrice += product.price;
-      } else {
-        this.purchases.push(product.price);
-        purchasePrice += product.price;
-      }
-      console.log(salePrice);
-      console.log(purchasePrice);
-    });
-  }
+  // calclateProfitLoss() {
+  //   let salePrice:any, purchasePrice: any;
+  //   this.invoice.forEach((product, index) => {
+  //     if(product.type == "sale" || product.type == 'Sale') {
+  //       this.sales.push(product.price);
+  //       salePrice += product.price;
+  //     } else {
+  //       this.purchases.push(product.price);
+  //       purchasePrice += product.price;
+  //     }
+  //     console.log(salePrice);
+  //     console.log(purchasePrice);
+  //   });
+  // }
   ngOnInit() { }
 }

@@ -15,17 +15,29 @@
         </div>
       </div>
     </header>
+    <div class="show-descion">
+      <h1 [ngStyle] = "(invoice[0]['descion'].profit > 0)? {'color' : 'green'} : {'color': 'red'}">
+        <!-- <span> -->
+          {{(invoice[0]['descion'].profit > 0)? 'Total Profit' : 'Total Loss'}}
+        <!-- </span> -->
+      </h1>
+      <h1 [ngStyle] = "(invoice[0]['descion'].profit > 0)? {'color' : 'green'} : {'color': 'red'}">
+        <!-- <span> -->
+          Rs: {{(invoice[0]['descion'].profit > 0)? invoice[0]['descion'].profit : invoice[0]['descion'].loss}}
+        <!-- </span> -->
+      </h1>
+    </div>
     <div class="view-data-table">
       <table class="table-responsive">
-        <tr>
+        <tr class="head_tr">
           <th>Name</th>
           <th>Quantity</th>
-          <th>Price / Item</th>
+          <th>Unit Price</th><!--Price / Item-->
           <th>Payment Type</th>
           <th>Total Price</th>
           <th>Payment Date</th>
         </tr>
-        <tr *ngFor="let mydata of invoice[0]">
+        <tr *ngFor="let mydata of invoice[0]['data']" class="body_tr">
           <td>{{mydata.name}}</td>
           <td>{{mydata.quantity}}</td>
           <td>{{mydata.price_per_item}}</td>
