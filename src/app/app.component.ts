@@ -14,10 +14,16 @@ export class AppComponent {
 
   constructor(public router:Router) {
 
-    /** NOTE: Getting URL */
+    /** NOTE: Getting URL
+     *         'url' & 'urlAfterRedirects' are helpful properties of Roouter Navigation.
+    */
     router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(val => {
-      this.route_path = val['url'];
-      console.log(this.route_path);
+      if(val['urlAfterRedirects']) {
+        this.route_path = val['urlAfterRedirects'];
+      } else {
+        this.route_path = val['url'];
+      }
     });
   }
+
 }
