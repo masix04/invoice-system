@@ -25,21 +25,33 @@ if($request_Method == 'POST') {
     $title = $_GET['title'];
 }
 
+$date = date('Y-m-d h:i:s');
+$db = new DB;
+
 /** NOTE: Sign UP Process Started */
 
-    $date = date('Y-m-d h:i:s');
-    $db = new DB;
+    /** NOTE: 1st : Eliminate Duplicate, so Check if User exists*/
 
-    $addUser = "INSERT INTO `user` (`name`,`email`,`telephone`,`title`,`password`,`datetime`)
-                    VALUES ('$name', '$email', $phone, '$title', '$password', '$date')
-                    ON DUPLICATE KEY UPDATE `name` = VALUES(`name`), 
-                        `title` = VALUES(`title`), `password` = VALUES(`password`), `datetime` = VALUES(`datetime`)";
- 
-    if($db->rawSQLQuery($addUser) === TRUE) {
-        echo "You have successfully completed signUp Process.";
+    $duplicateUser_existence = "SELECT u.email from `user` u where u.email = '$email'";
+
+    if($db->rawSqlQuery($duplicateUser_existence) === TRUE) {
+        echo "The email => <b> ".$email."</b> already exists. User another email to SignUp OR do LogIn Instead.";
+        return;
     }
     else {
-        echo "SignUp process didn't completed.\n\tERROR => ". $addUser."<br>".$conn->error;;
+
+        $addUser = "INSERT INTO `user` (`name`,`email`,`telephone`,`title`,`password`,`datetime`)
+                        VALUES ('$name', '$email', $phone, '$title', '$password', '$date')
+                        ON DUPLICATE KEY UPDATE `name` = VALUES(`name`), 
+                            `title` = VALUES(`title`), `password` = VALUES(`password`), `datetime` = VALUES(`datetime`)";
+    
+        if($db->rawSQLQuery($addUser) === TRUE) {
+            echo "You have successfully completed signUp Process.";
+        }
+        else {
+            echo "SignUp process didn't completed.\n\tERROR => ". $addUser."<br>".$conn->error;;
+        }
     }
+    
 
 return;
