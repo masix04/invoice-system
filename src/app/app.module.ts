@@ -11,9 +11,10 @@ import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
 import { AppComponent } from './app.component';
 import { ListingTabsComponent } from './listing-tabs/listing-tabs.component';
 import { URLS } from './utils/URLS';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, DateBarComponent, ViewInvoiceComponent, ListingTabsComponent, CreateInvoiceComponent],
+  declarations: [AppComponent, DateBarComponent, ViewInvoiceComponent, ListingTabsComponent, CreateInvoiceComponent, LoginComponent],
   imports: [
     CommonModule,
     BrowserModule,

@@ -1,0 +1,32 @@
+<div class="login_container">
+  <div class="login-title">
+    Login your Account
+  </div>
+  <div class="login-body">
+    <form [formGroup]= "loginForm" (ngSubmit) ="onTransactionStore(loginForm.value)">
+      <div class="form-group">
+        <!-- <label for="username"> userName </label> -->
+        <input id="username" class="login-username" type="text" formControlName = "username" name = "username" placeholder="Username" >
+        <!-- <input id="username" class="login-username" type="text" [(ngModel)]= "userModel.userName" name = "Username"> -->
+      </div>
+
+      <div class="form-group">
+        <!-- <label for="password"> Product password </label> -->
+        <input id="password" class="login-password" type="password" formControlName = "password" name = "password" placeholder="Password" >
+        <!-- <input id="password" class="login-password" type="text" [(ngModel)]= "ProductModel.password" name = "password"> -->
+      </div>
+
+      <div class="forgot-password">
+        <a href="#"> Forgot Password! </a>
+      </div>
+
+      <div class="login-button">
+        <input type="button" value="LOGIN" class="login-submit-button" type="submit">
+      </div>
+    </form>
+  </div>
+  <div class="login-footer">
+    <p title="Registor Now"> If you don't have an account!</p>
+    <a [routerLink]="['/sign-up']"> SIGN UP NOW </a>
+  </div>
+</div>

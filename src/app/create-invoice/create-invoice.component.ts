@@ -45,7 +45,7 @@ export class CreateInvoiceComponent implements OnInit {
   }
   FeedToDatabase(DataArray: any) {
     /** NOTE: POST method is making Problem for me to accept data at php/Backend Side. */
-    this.http.get(this.urls.WorkBaseUrl+'insertAction.php?Name='+DataArray.ProductName+'&Quantity='+DataArray.ProductQuantity+'&Price='+DataArray.ProductPrice+'&Type='+DataArray.PaymentType, DataArray)
+    this.http.get(this.urls.HomeBaseUrl+'insertAction.php?Name='+DataArray.ProductName+'&Quantity='+DataArray.ProductQuantity+'&Price='+DataArray.ProductPrice+'&Type='+DataArray.PaymentType, DataArray)
     .subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error),

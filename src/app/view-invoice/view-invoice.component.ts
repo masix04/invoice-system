@@ -18,7 +18,7 @@ export class ViewInvoiceComponent implements OnInit {
 
   constructor(private http: HttpClient, public urls: URLS) {
 
-    this.http.get(this.urls.WorkBaseUrl+'ViewInvoiceAction.php').subscribe(response => {
+    this.http.get(this.urls.HomeBaseUrl+'ViewInvoiceAction.php').subscribe(response => {
       this.invoice.push(response['invoice']);
       console.log(this.invoice);
     },
