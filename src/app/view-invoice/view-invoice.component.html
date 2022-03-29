@@ -1,62 +1,72 @@
-<div class="app-view-invoice-container">
-  <div class="view-invoice-head">
-    <h3> View INVOICE </h3>
+<div class="app_container">
+  <div class="app-header">
+    <h2 class="app_title"> Invoice System </h2>
+    <app-date-bar></app-date-bar>
+  </div>
+  <div>
+    <app-listing-tabs></app-listing-tabs>
   </div>
 
-  <div class="view-invoice-body">
-    <header>
-      <div class="view-invoice-body-header">
-        <div class="left-side">
-          <img src="{{urls.HomeImgBaseUrl}}view_left_head.png" alt="head_image" width="160">
-        </div>
-        <div class="right-side">
-          <h3>Owner's Name</h3>
-          <p>Owner's Industrial Address</p>
-        </div>
-      </div>
-    </header>
-    <div class="show-descion">
-      <h1 [ngStyle] = "(invoice[0]['descion'].profit > 0)? {'color' : 'green'} : {'color': 'red'}">
-        <!-- <span> -->
-          {{(invoice[0]['descion'].profit > 0)? 'Total Profit' : 'Total Loss'}}
-        <!-- </span> -->
-      </h1>
-      <h1 [ngStyle] = "(invoice[0]['descion'].profit > 0)? {'color' : 'green'} : {'color': 'red'}">
-        <!-- <span> -->
-          Rs: {{(invoice[0]['descion'].profit > 0)? invoice[0]['descion'].profit : invoice[0]['descion'].loss}}
-        <!-- </span> -->
-      </h1>
+  <div class="app-view-invoice-container">
+    <div class="view-invoice-head">
+      <h3> View INVOICE </h3>
     </div>
-    <div class="view-data-table">
-      <table class="table-responsive">
-        <tr class="head_tr">
-          <th>Name</th>
-          <th>Quantity</th>
-          <th>Unit Price</th><!--Price / Item-->
-          <th>Payment Type</th>
-          <th>Total Price</th>
-          <th>Payment Date</th>
-        </tr>
-        <tr *ngFor="let mydata of invoice[0]['data']" class="body_tr">
-          <td>{{mydata.name}}</td>
-          <td>{{mydata.quantity}}</td>
-          <td>{{mydata.price_per_item}}</td>
-          <td>{{mydata.type}}</td>
-          <td>{{mydata.total_price}}</td>
-          <td>{{mydata.datetime}}</td>
-        </tr>
-      </table>
-    </div>
-    <footer>
-      <div class="view-invoice-body-footer">
-        <div class="left-side">
 
+    <div class="view-invoice-body">
+      <header>
+        <div class="view-invoice-body-header">
+          <div class="left-side">
+            <img src="{{urls.ImgBaseUrl}}view_left_head.png" alt="head_image" width="160">
+          </div>
+          <div class="right-side">
+            <h3>Owner's Name</h3>
+            <p>Owner's Industrial Address</p>
+          </div>
         </div>
-        <div class="right-side">
-          <img src="{{urls.HomeImgBaseUrl}}view_right_foot.png" alt="foot_image" width="160">
-        </div>
+      </header>
+      <div class="show-descion">
+        <h1 [ngStyle] = "(invoice[0]['descion'].profit > 0)? {'color' : 'green'} : {'color': 'red'}">
+          <!-- <span> -->
+            {{(invoice[0]['descion'].profit > 0)? 'Total Profit' : 'Total Loss'}}
+          <!-- </span> -->
+        </h1>
+        <h1 [ngStyle] = "(invoice[0]['descion'].profit > 0)? {'color' : 'green'} : {'color': 'red'}">
+          <!-- <span> -->
+            Rs: {{(invoice[0]['descion'].profit > 0)? invoice[0]['descion'].profit : invoice[0]['descion'].loss}}
+          <!-- </span> -->
+        </h1>
       </div>
-    </footer>
+      <div class="view-data-table">
+        <table class="table-responsive">
+          <tr class="head_tr">
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Unit Price</th><!--Price / Item-->
+            <th>Payment Type</th>
+            <th>Total Price</th>
+            <th>Payment Date</th>
+          </tr>
+          <tr *ngFor="let mydata of invoice[0]['data']" class="body_tr">
+            <td>{{mydata.name}}</td>
+            <td>{{mydata.quantity}}</td>
+            <td>{{mydata.price_per_item}}</td>
+            <td>{{mydata.type}}</td>
+            <td>{{mydata.total_price}}</td>
+            <td>{{mydata.datetime}}</td>
+          </tr>
+        </table>
+      </div>
+      <footer>
+        <div class="view-invoice-body-footer">
+          <div class="left-side">
+
+          </div>
+          <div class="right-side">
+            <img src="{{urls.HomeImgBaseUrl}}view_right_foot.png" alt="foot_image" width="160">
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </div>
-
 </div>

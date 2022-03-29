@@ -1,9 +1,9 @@
 <div class="signup_container">
   <div class="signup_head">
     <h2> Registor Yourself
-      <!-- <img src="{{urls.WorkImgBaseUrl}}registration-white-fav.png" rel='' height='20px'> -->
+      <!-- <img src="{{urls.ImgBaseUrl}}registration-white-fav.png" rel='' height='20px'> -->
     </h2>
-    <img src="{{urls.WorkImgBaseUrl}}registration-white-fav.png" rel='' height='20px'>
+    <img src="{{urls.ImgBaseUrl}}registration-white-fav.png" rel='' height='20px'>
   </div>
 
   <div class="signup_body">
@@ -32,7 +32,8 @@
 
         <div class="form-group">
           <!-- <label for="phone"> Phone Number </label> -->
-          <input id="phone" class="signup-form-phone" type="tel" formControlName = "UserPhone" name = "UserPhone" placeholder="+92 ..." pattern="[+]{1}[0-9]{2}[ ]{1}[0-9]{3}[ ]{1}[0-9]{7}" required>
+          <!-- patter   [+]{1}[0-9]{2}[ ]{1}[0-9]{3}[ ]{1}[0-9]{7}-->
+          <input id="phone" class="signup-form-phone" type="tel" formControlName = "UserPhone" name = "UserPhone" placeholder="+92 ..." pattern="[0]{1}[0-9]{3}[0-9]{7}" required>
           <!-- <input id="phone" class="signup-form-phone" type="phone" [(ngModel)]= "UserModel.UserPhone" name = "UserPhone"> -->
         </div>
 
@@ -49,7 +50,7 @@
         </div>
 
         <div class="form-button">
-          <input id="signUp" type="button" value="Sign Up" class="signup-form-submit-button" type="submit" (click)="BtnAnimate('signUp')" [disabled]='!signUpForm.valid'>
+          <input id="signUp" type="button" value="Sign Up" class="signup-form-submit-button" type="submit" (click)="BtnAnimate('signUp')" ><!--_[disabled]='!signUpForm.valid'-->
         </div>
       </form>
     </div>
@@ -57,6 +58,6 @@
 
   <div class="signup_foot">
     <p> If you already have an account </p>
-    <a href="javascript:void(0)" [routerLink]="['/log-in']" id="logIn" class="signup-form-login-button"> Log In </a>
+    <a href="javascript:void(0)" [routerLink]="['/login']" id="logIn" class="signup-form-login-button"> Log In </a>
   </div>
 </div>

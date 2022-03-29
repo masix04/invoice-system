@@ -23,6 +23,7 @@ export class AppComponent {
       } else {
         this.route_path = val['url'];
       }
+     // console.log(this.route_path);
     });
   }
 

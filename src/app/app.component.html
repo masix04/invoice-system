@@ -1,7 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <!-- For Invoice -->
-<div *ngIf="route_path != '/sign-up'">
+<!-- <div *ngIf="route_path != '/sign-up'">
   <div class="app_container">
     <div class="app-header">
       <h2 class="app_title"> Invoice System </h2>
@@ -15,9 +15,21 @@
         <router-outlet></router-outlet>
     </div>
   </div>
-</div>
+</div> -->
+<!-- <div class="app_container">
+  <div class="app-header">
+    <h2 class="app_title"> Invoice System </h2>
+
+    <app-date-bar></app-date-bar>
+  </div>
+</div> -->
+<router-outlet></router-outlet>
+<!-- For SignUp Form -->
+<!-- <div *ngIf="route_path == '/sign-up'">
+  <app-sign-up></app-sign-up>
+</div> -->
 
 <!-- For SignUp Form -->
-<div *ngIf="route_path == '/sign-up'">
-  <app-sign-up></app-sign-up>
-</div>
+<!-- <div *ngIf="route_path == '/login'">
+  <app-login></app-login>
+</div> -->

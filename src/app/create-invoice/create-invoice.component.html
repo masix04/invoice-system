@@ -1,43 +1,53 @@
-<div class="app-create-invoice-container">
-  <div class="create-invoice-head">
-    <h3> Add Products </h3>
+<div class="app_container">
+  <div class="app-header">
+    <h2 class="app_title"> Invoice System </h2>
+    <app-date-bar></app-date-bar>
   </div>
-  <div class="create-invoice-body">
-    <div class="create-invoice-form">
-      <form [formGroup]= "invoiceForm" (ngSubmit) ="onTransactionStore(invoiceForm.value)">
-        <div class="form-group">
-          <label for="name"> Product Name </label>
-          <input id="name" class="create-form-name" type="text" formControlName = "ProductName" name = "ProductName">
-          <!-- <input id="name" class="create-form-name" type="text" [(ngModel)]= "ProductModel.ProductName" name = "ProductName"> -->
-        </div>
+  <div>
+    <app-listing-tabs></app-listing-tabs>
+  </div>
 
-        <div class="form-group">
-          <label for="quantity"> Product Quantity </label>
-          <input id="quantity" class="create-form-quantity" type="number" formControlName = "ProductQuantity" name = "ProductQuantity">
-          <!-- <input id="quantity" class="create-form-quantity" type="text" [(ngModel)]= "ProductModel.ProductQuantity" name = "Productquantity"> -->
-        </div>
+  <div class="app-create-invoice-container">
+    <div class="create-invoice-head">
+      <h3> Add Products </h3>
+    </div>
+    <div class="create-invoice-body">
+      <div class="create-invoice-form">
+        <form [formGroup]= "invoiceForm" (ngSubmit) ="onTransactionStore(invoiceForm.value)">
+          <div class="form-group">
+            <label for="name"> Product Name </label>
+            <input id="name" class="create-form-name" type="text" formControlName = "ProductName" name = "ProductName">
+            <!-- <input id="name" class="create-form-name" type="text" [(ngModel)]= "ProductModel.ProductName" name = "ProductName"> -->
+          </div>
 
-        <div class="form-group">
-          <label for="price"> Price per Item</label>
-          <input id="price" class="create-form-price" type="text" formControlName = "ProductPrice" name = "ProductPrice" required>
-          <!-- <input id="price" class="create-form-price" type="text" [(ngModel)]= "ProductModel.ProductPrice" name = "ProductPrice"> -->
-        </div>
+          <div class="form-group">
+            <label for="quantity"> Product Quantity </label>
+            <input id="quantity" class="create-form-quantity" type="number" formControlName = "ProductQuantity" name = "ProductQuantity">
+            <!-- <input id="quantity" class="create-form-quantity" type="text" [(ngModel)]= "ProductModel.ProductQuantity" name = "Productquantity"> -->
+          </div>
 
-        <div class="form-group">
-          <label for="type"> Payment Type </label>
-          <!-- <select id="type" class="create-form-type form-control" type="text" [(ngModel)]= "PaymentType" name = "PaymentType"> -->
-          <select id="type" class="create-form-type form-control" type="text" formControlName = "PaymentType" name = "PaymentType">
-            <option *ngFor="let type of paymentTypes" [value] = "type" selected>{{type}}</option>
-          </select>
-        </div>
+          <div class="form-group">
+            <label for="price"> Price per Item</label>
+            <input id="price" class="create-form-price" type="text" formControlName = "ProductPrice" name = "ProductPrice" required>
+            <!-- <input id="price" class="create-form-price" type="text" [(ngModel)]= "ProductModel.ProductPrice" name = "ProductPrice"> -->
+          </div>
 
-        <div class="form-button">
-          <input type="button" value="Save Invoice" class="create-form-submit-button" type="submit">
-        </div>
-      </form>
-<!-- <p>Name: </p><sub>{{ProductName}}</sub>
-<p>Price: </p><sub>{{ProductPrice}}</sub>
-<p>Payment TYPE: </p><sub>{{PaymentType }}</sub> -->
+          <div class="form-group">
+            <label for="type"> Payment Type </label>
+            <!-- <select id="type" class="create-form-type form-control" type="text" [(ngModel)]= "PaymentType" name = "PaymentType"> -->
+            <select id="type" class="create-form-type form-control" type="text" formControlName = "PaymentType" name = "PaymentType">
+              <option *ngFor="let type of paymentTypes" [value] = "type" selected>{{type}}</option>
+            </select>
+          </div>
+
+          <div class="form-button">
+            <input type="button" value="Save Invoice" class="create-form-submit-button" type="submit">
+          </div>
+        </form>
+  <!-- <p>Name: </p><sub>{{ProductName}}</sub>
+  <p>Price: </p><sub>{{ProductPrice}}</sub>
+  <p>Payment TYPE: </p><sub>{{PaymentType }}</sub> -->
+      </div>
     </div>
   </div>
 </div>

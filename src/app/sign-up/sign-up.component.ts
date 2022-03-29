@@ -60,7 +60,7 @@ export class SignUpComponent implements OnInit {
     }
   }
   signUpRequest() {
-    let url = this.urls.WorkBaseUrl+'Authentication/signUpAction.php?name='+this.UserSignUpValues.UserName+'&title='+this.UserSignUpValues.UserTitle
+    let url = this.urls.BaseUrl+'Authentication/signUpAction.php?name='+this.UserSignUpValues.UserName+'&title='+this.UserSignUpValues.UserTitle
       +'&email='+this.UserSignUpValues.UserEmail+'&phone='+this.UserSignUpValues.UserPhone+'&password='+this.UserSignUpValues.UserPassword;
     this.http.get(url).subscribe({
       next: (response)=> console.log(response),
