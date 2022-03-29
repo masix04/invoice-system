@@ -7,10 +7,10 @@ export class URLS {
     WorkImgBaseUrl = "http://localhost/SAMPLE-GIT-Projects/profit-loss-invoice/src/assets/images/";
 
 /** NOTE: When in Home */
-    BaseUrl = this.HomeBaseUrl;
-    ImgBaseUrl = this.HomeImgBaseUrl;
+    // BaseUrl = this.HomeBaseUrl;
+    // ImgBaseUrl = this.HomeImgBaseUrl;
 
 /** NOTE: When in Office */
-    // BaseUrl = this.WorkBaseUrl;
-    // ImgBaseUrl = this.WorkImgBaseUrl;
+    BaseUrl = this.WorkBaseUrl;
+    ImgBaseUrl = this.WorkImgBaseUrl;
 }

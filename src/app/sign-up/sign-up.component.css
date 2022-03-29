@@ -26,6 +26,26 @@
 .signup_container .signup_body .signup_form .form-group {
   display: grid;
 }
+.signup_container .signup_body .signup_form .form-group #name:invalid {
+  animation: shake 300ms;
+  border: red 1px solid;
+}
+@keyframes shake {
+  25% { transform: translateX(4px); }
+  50% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+.signup_container .signup_body .signup_form .form-group #name:valid {
+  border: green 1px solid;
+}
+.signup_container .signup_body .signup_form .form-group #for_name {
+  font-size: 12px;
+  position: absolute;
+  height:fit-content;
+  width:100px;
+  text-align: left;
+  float:left;
+}
 .signup_container .signup_body .signup_form .form-group input {
   padding: 6px 0 6px 15px;
   border-radius: 10px;
@@ -34,6 +54,7 @@
   margin: auto;
   box-shadow: rgb(231, 219, 166) 2px 2px 2px;
 }
+
 .signup_container .signup_body .signup_form .form-group select {
   border-radius: 10px;
   border: none;

@@ -11,46 +11,47 @@
       <form [formGroup]= "signUpForm" (ngSubmit) ="onSignUp(signUpForm.value)">
         <div class="form-group">
           <!-- <label for="name"> User Name </label> -->
-          <input id="name" class="signup-form-user-name" type="text" formControlName = "UserName" name = "UserName" placeholder="Your Name" >
+          <input id="name" class="signup-form-user-name" type="text" formControlName = "UserName" name = "UserName" placeholder="Your Name" pattern="[a-zA-Z ]{1,16}">
+          <span id="for_name"> Alphabet, not Null, 1-16 characters</span>
           <!-- <input id="name" class="signup-form-name" type="text" [(ngModel)]= "UserModel.UserName" name = "UserName"> -->
         </div>
 
         <div class="form-group">
           <!-- <label for="title"> User Title </label> -->
           <select id="title" class="signup-form-title form-control" formControlName = "UserTitle" name = "UserTitle" placeholder="title">
-            <option [value] = "" disabled > Select Title </option><hr>
-            <option *ngFor="let title of titles" [value] = "title" selected>{{title}}</option>
+            <option value = "" selected disabled hidden> Select Title </option><hr>
+            <option *ngFor="let title of titles" [value] = "title">{{title}}</option>
           </select>
           <!-- <input id="title" class="signup-form-title" type="text" [(ngModel)]= "UserModel.Usertitle" name = "Usertitle"> -->
         </div>
 
         <div class="form-group">
           <!-- <label for="email"> Email Address </label> -->
-          <input id="email" class="signup-form-email" type="email" formControlName = "UserEmail" name = "UserEmail" placeholder="email@address.com" required>
+          <input id="email" class="signup-form-email" type="email" formControlName = "UserEmail" name = "UserEmail" placeholder="email@address.com" ><!--required-->
           <!-- <input id="email" class="signup-form-email" type="text" [(ngModel)]= "UserModel.UserEmail" name = "UserEmail"> -->
         </div>
 
         <div class="form-group">
           <!-- <label for="phone"> Phone Number </label> -->
           <!-- patter   [+]{1}[0-9]{2}[ ]{1}[0-9]{3}[ ]{1}[0-9]{7}-->
-          <input id="phone" class="signup-form-phone" type="tel" formControlName = "UserPhone" name = "UserPhone" placeholder="+92 ..." pattern="[0]{1}[0-9]{3}[0-9]{7}" required>
+          <input id="phone" class="signup-form-phone" type="tel" formControlName = "UserPhone" name = "UserPhone" placeholder="03001234567" ><!--pattern="[0]{1}[0-9]{3}[0-9]{7}" required-->
           <!-- <input id="phone" class="signup-form-phone" type="phone" [(ngModel)]= "UserModel.UserPhone" name = "UserPhone"> -->
         </div>
 
         <div class="form-group">
           <!-- <label for="password"> Password </label> -->
-          <input id="password" class="signup-form-password" type="password" formControlName= "UserPassword" name = "Password" placeholder="password" required>
+          <input id="password" class="signup-form-password" type="password" formControlName= "UserPassword" name = "Password" placeholder="password" ><!--required-->
           <!-- <select id="password" class="signup-form-password form-control" type="password" [(ngModel)]= "Password" name = "Password"> -->
         </div>
 
         <div class="form-group">
           <!-- <label for="password"> Password </label> -->
-          <input id="retype_password" class="signup-form-retype_password" type="password" formControlName= "UserReTypePassword" name = "ReTypePassword" placeholder="Retype password" required>
+          <input id="retype_password" class="signup-form-retype_password" type="password" formControlName= "UserReTypePassword" name = "ReTypePassword" placeholder="Retype password" ><!--required-->
           <!-- <select id="password" class="signup-form-password form-control" type="password" [(ngModel)]= "Password" name = "Password"> -->
         </div>
 
         <div class="form-button">
-          <input id="signUp" type="button" value="Sign Up" class="signup-form-submit-button" type="submit" (click)="BtnAnimate('signUp')" ><!--_[disabled]='!signUpForm.valid'-->
+          <input id="signUp" type="button" value="Sign Up" class="signup-form-submit-button" type="submit" (click)="BtnAnimate('signUp')" [disabled]='signUpForm.invalid'><!--_-->
         </div>
       </form>
     </div>
