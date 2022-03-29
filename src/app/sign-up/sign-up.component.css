@@ -15,6 +15,10 @@
   border-top-left-radius:20px;
   border-top-right-radius:20px;
 }
+.signup_container .signup_head h2 {
+  cursor:default;
+}
+
 .signup_container .signup_body {
   height:370px;
   background-color: rgb(250, 242, 229);
@@ -26,19 +30,66 @@
 .signup_container .signup_body .signup_form .form-group {
   display: grid;
 }
-.signup_container .signup_body .signup_form .form-group #name:invalid {
-  animation: shake 300ms;
-  border: red 1px solid;
-}
-@keyframes shake {
-  25% { transform: translateX(4px); }
-  50% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
-}
-.signup_container .signup_body .signup_form .form-group #name:valid {
-  border: green 1px solid;
-}
-.signup_container .signup_body .signup_form .form-group #for_name {
+
+/** SignUp Form VALIDATION */
+
+  @keyframes shake {
+    25% { transform: translateX(4px); }
+    50% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+
+  /** Username Validation*/
+  .signup_container .signup_body .signup_form .form-group #name:invalid {
+    animation: shake 300ms;
+    border-bottom: red 3px solid;
+  }
+
+  .signup_container .signup_body .signup_form .form-group #name:valid {
+    border-bottom: green 3px solid;
+  }
+
+  /** Email Validation*/
+  .signup_container .signup_body .signup_form .form-group #email:invalid {
+    animation: shake 300ms;
+    border-bottom: red 3px solid;
+  }
+
+  .signup_container .signup_body .signup_form .form-group #email:valid {
+    border-bottom: green 3px solid;
+  }
+
+   /** Phone Validation*/
+   .signup_container .signup_body .signup_form .form-group #phone:invalid {
+    animation: shake 300ms;
+    border-bottom: red 3px solid;
+  }
+
+  .signup_container .signup_body .signup_form .form-group #phone:valid {
+    border-bottom: green 3px solid;
+  }
+
+  /** Password Validation*/
+  .signup_container .signup_body .signup_form .form-group #password:invalid {
+    animation: shake 300ms;
+    border-bottom: red 3px solid;
+  }
+
+  .signup_container .signup_body .signup_form .form-group #password:valid {
+    border-bottom: green 3px solid;
+  }
+
+   /** ReTypePassword Validation*/
+  .signup_container .signup_body .signup_form .form-group .retype_password_invalid {
+    animation: shake 300ms;
+    border-bottom: red 3px solid;
+  }
+
+  .signup_container .signup_body .signup_form .form-group .retype_password_valid {
+    border-bottom: green 3px solid;
+  }
+
+.signup_container .signup_body .signup_form .form-group #for_name, #for_email, #for_phone, #for_password, #for_retype_password {
   font-size: 12px;
   position: absolute;
   height:fit-content;
@@ -46,6 +97,7 @@
   text-align: left;
   float:left;
 }
+
 .signup_container .signup_body .signup_form .form-group input {
   padding: 6px 0 6px 15px;
   border-radius: 10px;

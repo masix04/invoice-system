@@ -12,6 +12,7 @@ export class SignUpComponent implements OnInit {
 
   titles: any;
   UserSignUpValues: any;
+  password: any;
 
   constructor(private http: HttpClient, public urls: URLS) {
     this.titles = [
@@ -22,7 +23,7 @@ export class SignUpComponent implements OnInit {
     UserName : new FormControl('',Validators.required),
     UserEmail : new FormControl('',Validators.required),
     UserTitle : new FormControl('',Validators.required),
-    UserPhone : new FormControl('',Validators.compose([Validators.required, Validators.pattern('[+]{1}[0-9]{3}[0-9]{7}')])),
+    UserPhone : new FormControl('',Validators.compose([Validators.required])),
     UserPassword : new FormControl('',Validators.compose([Validators.required, Validators.minLength(8)])),
     UserReTypePassword : new FormControl('',Validators.compose([Validators.required, Validators.minLength(8)]))
   });
@@ -49,7 +50,14 @@ export class SignUpComponent implements OnInit {
       }
     }
   }
-
+    /** NOTE: For Validation & UI Valid & Invalid */
+  verifyConfirmPassword(re_psw:any) {
+    if(this.password == re_psw) {
+      document.getElementById('retype_password').classList.add('retype_password_valid');
+    } else {
+      document.getElementById('retype_password').classList.add('retype_password_invalid');
+    }
+  }
   BtnAnimate(btnType) {
     var elm = document.getElementById('signUp');
     console.log(elm);
