@@ -1,0 +1,77 @@
+.signup_container {
+  margin: auto;
+  width: 40%;
+  background-color: antiquewhite;
+  margin-top: 50px;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+}
+.signup_container .signup_head {
+  /* height: 70px; */
+  background-color: rgb(110, 32, 32);
+  color: wheat;
+  text-align: center;
+  padding:10px 0;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+}
+.signup_container .signup_body {
+  height:370px;
+  background-color: rgb(250, 242, 229);
+}
+.signup_container .signup_body .signup_form {
+  padding-top: 50px;
+  text-align: center;
+}
+.signup_container .signup_body .signup_form .form-group {
+  display: grid;
+}
+.signup_container .signup_body .signup_form .form-group input {
+  padding: 6px 0 6px 15px;
+  border-radius: 10px;
+  border:none;
+  width:50%;
+  margin: auto;
+  box-shadow: rgb(231, 219, 166) 2px 2px 2px;
+}
+.signup_container .signup_body .signup_form .form-group select {
+  border-radius: 10px;
+  border: none;
+  width: 55%;
+  margin: auto;
+  box-shadow: rgb(231, 219, 166) 2px 2px 2px;
+}
+.signup_container .signup_body .signup_form .form-button .signup-form-submit-button {
+  padding: 10px;
+  border: none;
+  background-color: rgb(226, 226, 158);
+  color: brown;
+  font-size: 18;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: black 2px 2px 2px;
+}
+
+/** ON Click CSS for signUp Button */
+.signup_container .signup_body .signup_form .form-button .signUpBtnAnimate {
+  box-shadow:rgb(151, 148, 107) -1px -1px 1px 2px;
+  cursor:default;
+}
+
+.signup_container .signup_foot {
+  height:60px;
+  padding: 20px 0;
+  text-align: center;
+  background-color: rgb(247, 247, 247);
+}
+.signup_container .signup_foot .signup-form-login-button {
+  padding: 10px;
+  background-color: rgb(155, 95, 6);
+  cursor: pointer;
+  color: rgb(247, 237, 225);
+  border-radius: 5px;
+}
+.signup_container .signup_foot .signup-form-login-button:hover {
+  font-weight: 600;
+}

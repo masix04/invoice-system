@@ -1,14 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="app_container">
-  <div class="app-header">
-    <h2 class="app_title"> Invoice System </h2>
 
-    <app-date-bar></app-date-bar>
+<!-- For Invoice -->
+<div *ngIf="route_path != '/sign-up'">
+  <div class="app_container">
+    <div class="app-header">
+      <h2 class="app_title"> Invoice System </h2>
+
+      <app-date-bar></app-date-bar>
+    </div>
+    <div>
+      <app-listing-tabs></app-listing-tabs>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
   </div>
-  <div>
-    <app-listing-tabs></app-listing-tabs>
-  </div>
-  <div>
-      <router-outlet></router-outlet>
-  </div>
+</div>
+
+<!-- For SignUp Form -->
+<div *ngIf="route_path == '/sign-up'">
+  <app-sign-up></app-sign-up>
 </div>
