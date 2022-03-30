@@ -52,10 +52,15 @@ export class SignUpComponent implements OnInit {
   }
     /** NOTE: For Validation & UI Valid & Invalid */
   verifyConfirmPassword(re_psw:any) {
+    var brother = document.getElementById('retype_password');
     if(this.password == re_psw) {
       document.getElementById('retype_password').classList.add('retype_password_valid');
+      (<any>brother).previousSibling.classList.add('valid_src');
+      (<any>brother).previousSibling.classList.remove('invalid_src');
     } else {
       document.getElementById('retype_password').classList.add('retype_password_invalid');
+      (<any>brother).previousSibling.classList.add('invalid_src');
+      (<any>brother).previousSibling.classList.remove('valid_src');
     }
   }
   BtnAnimate(btnType) {

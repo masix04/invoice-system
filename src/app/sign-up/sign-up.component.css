@@ -1,3 +1,4 @@
+
 .signup_container {
   margin: auto;
   width: 40%;
@@ -20,15 +21,28 @@
 }
 
 .signup_container .signup_body {
-  height:370px;
+  height:fit-content;
   background-color: rgb(250, 242, 229);
+  padding-bottom: 10px;
 }
 .signup_container .signup_body .signup_form {
   padding-top: 50px;
   text-align: center;
 }
 .signup_container .signup_body .signup_form .form-group {
-  display: grid;
+  display: flex;
+  display: -ms-flexbox;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 35px;
+}
+
+.icon {
+  padding: 10px;
+  background-color: rgb(141, 59, 5);
+  color: white;
+  text-align: center;
 }
 
 /** SignUp Form VALIDATION */
@@ -91,27 +105,30 @@
 
 .signup_container .signup_body .signup_form .form-group #for_name, #for_email, #for_phone, #for_password, #for_retype_password {
   font-size: 12px;
-  position: absolute;
+  /* position: absolute; */
   height:fit-content;
   width:100px;
   text-align: left;
-  float:left;
+  color: rgb(184, 101, 6);
+  margin-top: 0;
 }
 
 .signup_container .signup_body .signup_form .form-group input {
   padding: 6px 0 6px 15px;
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   border:none;
-  width:50%;
-  margin: auto;
+  width:60%;
+  margin-right: 20px;
   box-shadow: rgb(231, 219, 166) 2px 2px 2px;
 }
 
 .signup_container .signup_body .signup_form .form-group select {
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   border: none;
-  width: 55%;
-  margin: auto;
+  width: 65%;
+  /* margin: auto; */
   box-shadow: rgb(231, 219, 166) 2px 2px 2px;
 }
 .signup_container .signup_body .signup_form .form-button .signup-form-submit-button {
@@ -123,9 +140,11 @@
   font-weight: 600;
   cursor: pointer;
   border-radius: 5px;
-  box-shadow: black 2px 2px 2px;
+  box-shadow: rgb(100, 2, 2) 2px 2px 2px;
 }
-
+.signup_container .signup_body .signup_form .form-button .signup-form-submit-button:hover {
+  font-weight: 600;
+}
 /** ON Click CSS for signUp Button */
 .signup_container .signup_body .signup_form .form-button .signUpBtnAnimate {
   box-shadow:rgb(151, 148, 107) -1px -1px 1px 2px;
@@ -147,4 +166,20 @@
 }
 .signup_container .signup_foot .signup-form-login-button:hover {
   font-weight: 600;
+}
+.valid_src {
+  background: url("http://localhost/SAMPLE-GIT-Projects/profit-loss-invoice/src/assets/images/tick-green-fav.png");
+  background-color: rgb(141, 59, 5);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  padding: 18px;
+}
+.invalid_src {
+  background: url("http://localhost/SAMPLE-GIT-Projects/profit-loss-invoice/src/assets/images/cross-red-fav.png");
+  background-color: rgb(141, 59, 5);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  padding: 18px;
 }
