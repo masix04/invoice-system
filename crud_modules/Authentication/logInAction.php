@@ -42,14 +42,20 @@ $db = new DB;
 
         /** NOTE: executing the Query */
     $user = $db->rawSQLQuery($verifyUser);
+    $response = [];
 
         /** NOTE: Message to User according to provided Credentials. */
     if (!empty($user->num_rows) && $user->num_rows > 0) {
-        while($row = $user->fetch_assoc()) {
-            echo "User exists, ".$row['name']." have Logined Successfully.";
-        }
+        // while($row = $user->fetch_assoc()) {
+        //     echo "User exists, ".$row['name']." have Logined Successfully.";
+        // }
+        $response['code'] = 200;
+        $response['message'] = 'Success';
     }
     else {
-        echo "Login Failed, User doesn't Exists.\n";
-        echo "\n\tERROR => ". $verifyUser."<br>".$conn->error;
+        // echo "Login Failed, User doesn't Exists.\n";
+        $response['code'] = 400;
+        $response['message'] = 'Login Failed, User doesn\'t Exists';
+            // echo "\n\tERROR => ". $verifyUser."<br>".$conn->error;
     }
+    echo json_encode($response);
