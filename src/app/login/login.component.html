@@ -3,7 +3,7 @@
     Login your Account
   </div>
   <div class="login-body">
-    <form [formGroup]= "loginForm" (ngSubmit) ="onTransactionStore(loginForm.value)">
+    <form [formGroup]= "loginForm" (ngSubmit) ="onLoggedIn(loginForm.value)">
       <div class="form-group">
         <!-- <label for="username"> userName </label> -->
         <input id="username" class="login-username" type="text" formControlName = "username" name = "username" placeholder="Username" >
@@ -15,7 +15,9 @@
         <input id="password" class="login-password" type="password" formControlName = "password" name = "password" placeholder="Password" >
         <!-- <input id="password" class="login-password" type="text" [(ngModel)]= "ProductModel.password" name = "password"> -->
       </div>
-
+      <div class="notify-user">
+        <p id="alert-message"> {{message}} </p>
+      </div>
       <div class="forgot-password">
         <a href="#"> Forgot Password! </a>
       </div>

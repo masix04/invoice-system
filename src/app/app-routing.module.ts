@@ -27,8 +27,8 @@ const routes: Routes = [
   { path: 'create-invoice', component: CreateInvoiceComponent },
   { path: 'view-invoice', component: ViewInvoiceComponent },
 
-  { path: '', redirectTo: '/sign-up', pathMatch: 'full' },
-  { path: '**', redirectTo: '/sign-up', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ]
 @NgModule({
   declarations: [],

@@ -56,7 +56,17 @@
     color:white;
     font-weight: 600;
     font-size: 20;
-    background-color: brown;
+    background-color: rgb(42, 165, 48);
     padding: 10px;
 
+}
+.notify-user {
+  width:50%;
+  margin: auto;
+  text-align: center;
+}
+.notify-user #alert-message {
+  display:none;
+  padding: 5px;
+  border-radius: 15px;
 }
